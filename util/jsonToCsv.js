@@ -1,7 +1,15 @@
 import { stringify } from "csv-stringify"
 import fs from "fs"
 
-const writeStream = fs.createWriteStream("filename.output.csv")
+const csvFilename = "filename.output.csv"
+
+// check if csv file already exists and remove the previous data
+const isexists = fs.existsSync(csvFilename)
+if (isexists) {
+    fs.unlinkSync(csvFilename)
+}
+
+const writeStream = fs.createWriteStream(csvFilename)
 
 
 function JsonToCsv(json) {
@@ -9,7 +17,6 @@ function JsonToCsv(json) {
     const stringifier = stringify({ header: true, columns: headers });
 
     json.map((data) => {
-        const newdata = Object.keys(data)
         headers = Object.keys(data)
         values.push(...Object.values(data))
 

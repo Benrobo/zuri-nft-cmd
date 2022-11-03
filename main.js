@@ -10,6 +10,7 @@ import csvToJSON from "./util/csvToJson.js"
 import crypto from "crypto"
 import generateCHIP007MetaData from "./util/generate_metadata.js"
 import JsonToCsv from "./util/jsonToCsv.js"
+import path from "path"
 
 const argv = yargs(hideBin(process.argv)).argv
 
@@ -122,9 +123,16 @@ function checkValidFilePath(path) {
     }
 }
 
-async function createFile(filename = "test1.json", data = "some data") {
+async function createFile(filePath, data = "") {
+    const isexists = fs.existsSync(filePath)
+    if (isexists) {
+        // unlink file / directory if it exists
+        for (const file of fs.readdirSync("./json_output")) {
+            fs.unlinkSync(path.join("./json_output", file));
+        }
+    }
     try {
-        fs.appendFileSync(filename, data)
+        fs.appendFileSync(filePath, data)
     } catch (e) {
         console.log("something went wrong", e)
     }
