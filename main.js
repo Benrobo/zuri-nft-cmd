@@ -63,15 +63,7 @@ async function handleCli() {
 
 
         // generate chip-007 metadata
-        const json = JSON.parse(csvToJSON(fs.readFileSync(path).toString()))
-
-        // loop through each json and generate hash along with appending it
-        const newJson = json.map((data) => {
-            const jsonTostring = JSON.stringify(data)
-            const hash = crypto.createHash("sha256").update(jsonTostring).digest("hex")
-            data["HASH"] = hash
-            return data
-        })
+        const newJson = JSON.parse(csvToJSON(fs.readFileSync(path).toString()))
 
         const { newJsonMetadata, newCsvData } = generateCHIP007MetaData(newJson)
 
