@@ -23,7 +23,7 @@ function generateCHIP007MetaData(json) {
 
         const attr = data["Attributes"]
         const store = []
-        attr.split(",").join(".").split(".").map((attrdata) => {
+        attr.split(";").join(".").split(".").map((attrdata) => {
             let obj = {}
             const attrProp = attrdata.replace("Female", '').replace("Male", "").trim("").split(":").filter(data => data !== "")
             obj["trait_type"] = attrProp[0] || ""
