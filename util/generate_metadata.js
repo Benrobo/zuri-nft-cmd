@@ -21,6 +21,16 @@ function generateCHIP007MetaData(json) {
             teamName = tmp
         }
 
+        const attr = data["Attributes"]
+        const store = []
+        attr.split(",").join(".").split(".").map((attrdata) => {
+            let obj = {}
+            const attrProp = attrdata.replace("Female", '').replace("Male", "").trim("").split(":").filter(data => data !== "")
+            obj["trait_type"] = attrProp[0] || ""
+            obj["value"] = attrProp[1] || ""
+            store.push(obj)
+        })
+
         const chip007 = {
             format: "CHIP-0007",
             name: data["Filename"],
@@ -33,7 +43,8 @@ function generateCHIP007MetaData(json) {
                 {
                     "trait_type": "gender",
                     "value": data["Gender"] || ""
-                }
+                },
+                ...store
             ],
             collection: {
                 name: "Zuri NFT Tickets for Free Lunch",
@@ -52,6 +63,8 @@ function generateCHIP007MetaData(json) {
         const hash = crypto.createHash("sha256").update(jsonTostring).digest("hex")
 
         data["HASH"] = hash;
+
+        // console.log(chip007)
 
         newJsonMetadata.push(chip007)
         newCsvData.push(data)
