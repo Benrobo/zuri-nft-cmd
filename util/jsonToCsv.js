@@ -15,10 +15,11 @@ const writeStream = fs.createWriteStream(csvFilename)
 function JsonToCsv(json) {
     let headers, values = [];
     const stringifier = stringify({ header: true, columns: headers });
-
-    json.map((data) => {
+    let teams = []
+    json.map((data, idx) => {
         headers = Object.keys(data)
         values.push(...Object.values(data))
+        teams.push(data)
 
         stringifier.write(data);
     })

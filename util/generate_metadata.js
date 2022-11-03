@@ -14,8 +14,8 @@ function generateCHIP007MetaData(json) {
 
     json.map((data) => {
         // check for team name
-        if (data["Series Number"] || data["Series Number"].includes("Team")) {
-            let tmp = (data["Series Number"] || data["Serial Number"])
+        if ((data["TEAM NAMES"] || data["TEAM NAMES"]).includes("TEAM")) {
+            let tmp = (data["TEAM NAMES"]).replace("/n", '')
                 .toString()
                 .trim()
             teamName = tmp
@@ -31,6 +31,7 @@ function generateCHIP007MetaData(json) {
             store.push(obj)
         })
 
+        // GENERATE THE STANDARD CHIP-007 NFT JSON
         const chip007 = {
             format: "CHIP-0007",
             name: data["Filename"],
@@ -64,6 +65,7 @@ function generateCHIP007MetaData(json) {
 
         data["HASH"] = hash;
 
+        // return console.log(chip007)
         // console.log(chip007)
 
         newJsonMetadata.push(chip007)

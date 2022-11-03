@@ -78,12 +78,13 @@ async function handleCli() {
         // show loader
 
         let spinner;
-
         spinner = createSpinner('Generating CSV...').start();
         await sleep(2);
         spinner.clear()
+
         // generate csv
         const isCsvGenerated = JsonToCsv(newCsvData)
+        // return;
 
         if (isCsvGenerated) {
             log("")
