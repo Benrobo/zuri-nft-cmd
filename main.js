@@ -90,9 +90,7 @@ async function handleCli() {
 
             // generate json file based on the json nft name attribute
             newJsonMetadata.map((data, i) => {
-                if (data.name !== "") {
-                    createFile(`${jsonOutputFolder}/${data["name"]}.json`, JSON.stringify(data))
-                }
+                createFile(`${jsonOutputFolder}/${data["name"]}.json`, JSON.stringify(data))
             })
 
             spinner.success({ text: `Successfully generated NFT JSON @ ${chalk.cyanBright("./json_output")} folder ` });
@@ -117,13 +115,6 @@ function checkValidFilePath(path) {
 }
 
 async function createFile(filePath, data = "") {
-    const isexists = fs.existsSync(filePath)
-    if (isexists) {
-        // unlink file / directory if it exists
-        for (const file of fs.readdirSync("./json_output")) {
-            fs.unlinkSync(path.join("./json_output", file));
-        }
-    }
     try {
         fs.appendFileSync(filePath, data)
     } catch (e) {
