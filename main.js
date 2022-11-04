@@ -61,6 +61,8 @@ async function handleCli() {
             return
         }
 
+        // empty json_output first
+        removeInitialJsonOutputFolder()
 
         // generate chip-007 metadata
         const newJson = JSON.parse(csvToJSON(fs.readFileSync(path).toString()))
@@ -128,7 +130,15 @@ function createFolder(pathDir) {
     }
 }
 
-
+function removeInitialJsonOutputFolder() {
+    const isexists = fs.existsSync("./json_output")
+    if (isexists) {
+        // unlink file / directory if it exists
+        for (const file of fs.readdirSync("./json_output")) {
+            fs.unlinkSync(path.join("./json_output", file));
+        }
+    }
+}
 
 // call all functions
 if (!argv.showhelp) {
