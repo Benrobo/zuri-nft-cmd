@@ -56,10 +56,8 @@ function generateCHIP007MetaData(json) {
         const jsonTostring = JSON.stringify(chip007)
         const hash = crypto.createHash("sha256").update(jsonTostring).digest("hex")
 
+        // append hash back to csv data
         data["HASH"] = hash;
-
-        // return console.log(chip007)
-        // console.log(chip007)
 
         newJsonMetadata.push(chip007)
         newCsvData.push(data)
