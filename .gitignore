@@ -1,5 +1,11 @@
-/node_modules
 
+# ignore the folders below
+
+/node_modules
 /json_output
 
+# ignore the files below
+
 filename.output.csv
+test2.csv
+test3.csv
