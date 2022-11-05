@@ -1,4 +1,5 @@
-import fs from "fs"
+
+// function to convert CSV file to JSON.
 
 function csvToJSON(csv) {
     //  Convert CSV to JSON
