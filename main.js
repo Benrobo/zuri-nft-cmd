@@ -35,9 +35,8 @@ const jsonOutputFolder = "./json_output"
 // create json folder initially
 createFolder(jsonOutputFolder)
 
-
 // show welome function has far the user doesnt type the showhelp command.
-if (!argv.showhelp) {
+if (argv._[0] !== "showhelp") {
     welcome(helpText, cliTitle)
 }
 
@@ -97,7 +96,7 @@ async function ZURI_NFT_CMD() {
     }
 
     // if user types "showhelp" on the terminal, print the help text
-    if (argv.showhelp) {
+    if (argv._[0] === "showhelp") {
         log("")
         log(helpText)
         return;
