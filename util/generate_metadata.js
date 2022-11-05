@@ -1,15 +1,17 @@
 import crypto from "crypto"
+import return_Chip007_Json_Format from "./returnChip007Format.js";
 
 function generateCHIP007MetaData(json) {
-    // check the length
+    // check the json data length if it not empty
     if (json.length === 0) return console.log("Failed to convert csv to json");
 
     let teamName = ""
 
+    // constant variables to store 1. chip-007 metadata, 2. csvData.
     const newJsonMetadata = []
     const newCsvData = []
 
-
+    // calculate the total csv columns data
     const total = json[json.length - 1]["Series Number"] || json[json.length - 1]["Serial Number"]
 
     json.map((data) => {
@@ -21,43 +23,34 @@ function generateCHIP007MetaData(json) {
             teamName = tmp
         }
 
+        // extract the attributes field from the csv
         const attr = data["Attributes"]
+
+        // a variable to store all attributes data
         const store = []
+
         attr.split(";").join(".").split(".").map((attrdata) => {
             let obj = {}
+
+            // find and replace all Females and Males name with an empty string
             const attrProp = attrdata.replace("Female", '').replace("Male", "").trim("").split(":").filter(data => data !== "")
+
+            // add each data to object
             obj["trait_type"] = attrProp[0] || ""
             obj["value"] = attrProp[1] || ""
             store.push(obj)
         })
 
+        const filename = data["Filename"],
+            description = data["Description"],
+            gender = data["Gender"] || "",
+            seriesNumber = +data["Series Number"] || +data["Serial Number"],
+            seriesTotal = +total.trim(),
+            restAttributes = store;
+
+
         // GENERATE THE STANDARD CHIP-007 NFT JSON
-        const chip007 = {
-            format: "CHIP-0007",
-            name: data["Filename"],
-            description: data["Description"],
-            minting_tool: teamName,
-            sensitive_content: false,
-            series_number: +data["Series Number"] || +data["Serial Number"],
-            series_total: +total.trim(),
-            attributes: [
-                {
-                    "trait_type": "gender",
-                    "value": data["Gender"] || ""
-                },
-                ...store
-            ],
-            collection: {
-                name: "Zuri NFT Tickets for Free Lunch",
-                id: "b774f676-c1d5-422e-beed-00ef5510c64d",
-                attributes: [
-                    {
-                        type: "description",
-                        value: "Rewards for accomplishments during HNGi9."
-                    }
-                ]
-            }
-        };
+        const chip007 = return_Chip007_Json_Format(filename, description, gender, teamName, seriesNumber, seriesTotal, restAttributes)
 
         // generate hash
         const jsonTostring = JSON.stringify(chip007)

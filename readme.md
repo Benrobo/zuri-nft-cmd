@@ -56,7 +56,7 @@ Switch to the path / folder where you once download this project using built-in 
 To begin the script, make sure you have a stable `Internet connection` before starting the installation. Simply run the command inside the `switched` folder which you ran above.
 ```sh
   # install all npm dependencies using npm.
-  $ npm install
+  zuri-nft-cmd$ npm install
 ```
 
 4. ### Start the program. 🔥
@@ -67,6 +67,7 @@ Once installation has been completed, you could start the installation by runnin
 > Where `./path/to/csv/file` should be replaced with a valid csv file name i.e, if the csv file was downloaded into your `Document` directory, the path would be `./User/<your-machine-name>/Documents/hng-team.csv`
 
 > Note :- No space should be present in your csv file name. for eg :-   
+
 > /Users/benrobo/my csv file.csv ❌
 > /Users/benrobo/hng-final-team.csv ✅
 
@@ -87,8 +88,8 @@ If not done correctly, an error should be shown below.
 ![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/csv.png)
 
 
-### 2. Generate a `420` nft JSON files which has the following format. 
-> All JSON files generated can be found in the `json_output` folder in the parent directory. 2️⃣
+### 2. Generate a `420` nft JSON files which has the following format.  2️⃣ 
+> All JSON files generated can be found in the `json_output` folder in the parent directory.
 
 ```json
 {
@@ -123,7 +124,7 @@ If not done correctly, an error should be shown below.
 }
 ```
 
-All this data generated, can be found in this project folder where it was downloaded.
+All this data generated, can be found in the project folder where it was downloaded.
 
 ![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-3.png)
 

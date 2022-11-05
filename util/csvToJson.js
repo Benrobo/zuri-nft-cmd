@@ -7,7 +7,10 @@ function csvToJSON(csv) {
     const splittedBuffer = csv.split("\r")
     // get the headers from the csv
 
+    // extract the headers from the csv .
     const csvHeaders = splittedBuffer[0].split(",")
+
+    // extract the rest columns / rows data
     const csvColumnData = splittedBuffer.slice(1)
 
     // loop through each column data
