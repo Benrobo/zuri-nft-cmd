@@ -64,6 +64,7 @@ async function ZURI_NFT_CMD() {
         // destructure csv and json data gotten from generateCHIP007MetaData() function
         const { newJsonMetadata, newCsvData } = generateCHIP007MetaData(newJson)
 
+        // create spinner and start it up
         spinner = createSpinner('Generating CSV...').start();
 
         // sleep for 2000 milliseconds and remove the loader
