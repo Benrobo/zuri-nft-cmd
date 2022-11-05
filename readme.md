@@ -1,7 +1,7 @@
 # Zuri-NFT-CMD
 Generate CHIP-007 NFT JSON METADATA & Update Hash in a new CSV file.
 
-![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/zuri-cmd.png)
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-cmd.png)
 
 
 ## Getting started 🔑
@@ -74,15 +74,17 @@ If the path specified isnt found, an error would be thrown to you in your termin
 
 Once that done, you should have something like the image below, depending on your machine.
 
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-1.png)
 
+If not done correctly, an error should be shown below.
+
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-2.png)
 
 #### Running the above command does two task
 
 ### 1. Generate a new `CSV` file with a new `HASH` field appended to it having the name `filename.output.csv`
 
-![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/csv.png)
-
-
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/csv.png)
 
 
 ### 2. Generate a `420` nft JSON files which has the following format. 
@@ -120,3 +122,5 @@ Once that done, you should have something like the image below, depending on you
   }
 }
 ```
+
+All this data generated, can be found in this project folder where it was downloaded.
