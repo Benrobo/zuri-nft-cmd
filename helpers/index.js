@@ -3,12 +3,16 @@ import figlet from "figlet"
 import fs from "fs"
 import path from "path"
 
-
+// create custom sleep function to delay process
 export const sleep = (sec = 1) => new Promise((res) => setTimeout(res, sec * 1000))
+
+// custom log function
 export const log = (...params) => console.log(...params, "\n")
 
+// print gradient text to the terminal
 export const printGradientTitle = (text) => log(gradient.pastel.multiline(figlet.textSync(text, { font: "banner3" })))
 
+// print gradient text
 export const printGrdient = (text) => gradient.pastel.multiline(text)
 
 // show welcome text
@@ -37,12 +41,14 @@ export async function createFile(filePath, data = "") {
     }
 }
 
+// create folder
 export function createFolder(pathDir) {
     if (!fs.existsSync(pathDir)) {
         fs.mkdirSync(pathDir);
     }
 }
 
+// removed initial "json_output" folder
 export function removeInitialJsonOutputFolder() {
     const isexists = fs.existsSync("./json_output")
     if (isexists) {
