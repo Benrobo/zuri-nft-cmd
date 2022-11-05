@@ -41,7 +41,7 @@ if (argv._[0] !== "showhelp") {
 }
 
 
-// main file
+// main function
 async function ZURI_NFT_CMD() {
 
     // initialized global variables
