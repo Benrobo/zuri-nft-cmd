@@ -124,3 +124,9 @@ If not done correctly, an error should be shown below.
 ```
 
 All this data generated, can be found in this project folder where it was downloaded.
+
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-3.png)
+
+All `CHIP-007 NFT JSON` files can be found inside the `json_output` folder.
+
+![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-4.png)
