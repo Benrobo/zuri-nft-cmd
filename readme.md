@@ -26,14 +26,14 @@ To test if nodejs is installed, run the below commands
 ```
 > if the above commands returns a version number, 🎉 congrats, you're ready to move on with the next step.
 
-1. ### Clone or Download the repo. 
+1. ### Clone or Download the repo.  
 You could start off by cloning or downloading the repo into your pc.
 
-#### Download using `download button`
+#### Download using `download button`🔥
 You could download the project by scrolling to the top of this page where a `Green` code button is found. click it and select the option `Download ZIP`.
 This would download a `ZIP` file into your machine, simply extract the folders from the zip manually.
 
-#### Download using GIT.
+#### Download using GIT. 🌟
 This method uses git, if you dont have one installed on your machine, download from [Here](https://git-scm.com). After downloading, run the commands below.
 
 Open your machine terminal app and point switch to any directory that suite you.
@@ -42,7 +42,7 @@ Open your machine terminal app and point switch to any directory that suite you.
   $ git clone https://github.com/benrobo/zuri-nft-cmd
 ```
 
-2. ### Swtich Directory.
+2. ### Swtich Directory. 📌
 Switch to the path / folder where you once download this project using built-in cli commands.
 ```sh
   # simply change and switch to your downloaded folder.
@@ -52,14 +52,14 @@ Switch to the path / folder where you once download this project using built-in 
   zuri-nft-cmd$
 ```
 
-3. ### Install all available dependencies.
+3. ### Install all available dependencies. 🚀
 To begin the script, make sure you have a stable `Internet connection` before starting the installation. Simply run the command inside the `switched` folder which you ran above.
 ```sh
   # install all npm dependencies using npm.
   $ npm install
 ```
 
-4. ### Start the program.
+4. ### Start the program. 🔥
 Once installation has been completed, you could start the installation by running he below commands.
 ```sh
   zuri-nft-cmd$ node main.js --compute ./path/to/csv/file.
@@ -80,15 +80,15 @@ If not done correctly, an error should be shown below.
 
 ![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-2.png)
 
-#### Running the above command does two task
+### Running the above command does two jobs. 📌
 
-### 1. Generate a new `CSV` file with a new `HASH` field appended to it having the name `filename.output.csv`
+#### 1. Generate a new `CSV` file with a new `HASH` field appended to it having the name `filename.output.csv` 1️⃣
 
 ![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/csv.png)
 
 
 ### 2. Generate a `420` nft JSON files which has the following format. 
-> All JSON files generated can be found in the `json_output` folder in the parent directory.
+> All JSON files generated can be found in the `json_output` folder in the parent directory. 2️⃣
 
 ```json
 {
@@ -130,3 +130,9 @@ All this data generated, can be found in this project folder where it was downlo
 All `CHIP-007 NFT JSON` files can be found inside the `json_output` folder.
 
 ![image](https://raw.githubusercontent.com/Benrobo/zuri-nft-cmd/main/readmeImg/zuri-4.png)
+
+If you've made it this far enough...
+
+### 🎉🎉🎉 Congratulations 🎉🎉🎉
+
+> If any issue is found, please leave it [Here](https://github.com/Benrobo/zuri-nft-cmd/issues)
